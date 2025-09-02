@@ -89,7 +89,7 @@ export const projects = [
     ],
     image: './assets/Portfolio.png',
     source_code_link: 'https://github.com/',
-    live_demo_link: 'https://your-live-demo.com',
+    live_demo_link: 'https://kabir-singh.netlify.app/',
   },
   {
     name: 'Task Management App',
