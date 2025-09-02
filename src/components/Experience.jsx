@@ -1,7 +1,7 @@
 import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { motion } from 'framer-motion';
-import { SectionWrapper } from './hoc/sectionWrapper';
+import { SectionWrapper } from './hoc/SectionWrapper';
 import { experiences } from '../constants';
 import ErrorBoundary from './ErrorBoundary';
 

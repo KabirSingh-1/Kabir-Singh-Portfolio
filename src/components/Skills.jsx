@@ -45,7 +45,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SectionWrapper } from './hoc/sectionWrapper';
+import { SectionWrapper } from './hoc/SectionWrapper';
 import BallCanvas from './canvas/Ball';
 import { skills } from '../constants';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SectionWrapper } from './hoc/sectionWrapper';
+import { SectionWrapper } from './hoc/SectionWrapper';
 import { skills } from '../constants';
 
 const fadeIn = (direction = 'up', type = 'tween', delay = 0, duration = 1) => ({

@@ -57,7 +57,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SectionWrapper } from './hoc/sectionWrapper';
+import { SectionWrapper } from './hoc/SectionWrapper';
 import { projects } from '../constants';
 import ProjectCard from './ProjectCards';
 

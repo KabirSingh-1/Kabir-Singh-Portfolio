@@ -105,7 +105,7 @@
 
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { SectionWrapper } from './hoc/sectionWrapper';
+import { SectionWrapper } from './hoc/SectionWrapper';
 import emailjs from 'emailjs-com';
 import toast, { Toaster } from 'react-hot-toast';
 
