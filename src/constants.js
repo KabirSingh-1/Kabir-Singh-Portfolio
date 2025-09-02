@@ -92,17 +92,17 @@ export const projects = [
     live_demo_link: 'https://kabir-singh.netlify.app/',
   },
   {
-    name: 'Task Management App',
+    name: 'Liberty Law',
     description:
-      'A tool for organizing tasks, deadlines, and progress tracking with a clean UI.',
-    category: 'Productivity',
+      'Liberty Law: Your Freedom, Our Fight. Connect with top-tier legal defenders dedicated to protecting your rights and securing your liberty.',
+    category: 'Law',
     tags: [
-      { name: 'Next.js', color: 'text-white' },
+      { name: 'HTML/CSS', color: 'text-white' },
       { name: 'MongoDB', color: 'text-green-500' },
-      { name: 'TypeScript', color: 'text-blue-400' },
+      { name: 'JavaScript', color: 'text-blue-400' },
     ],
-    image: 'https://picsum.photos/seed/project3/500/300',
-    source_code_link: 'https://github.com/',
-    live_demo_link: 'https://your-live-demo.com',
+    image: './assets/Liberty.png',
+    source_code_link: 'https://github.com/Vidya20044pps/Liberty_Law-',
+    live_demo_link: 'https://main--libertylaw.netlify.app/',
   },
 ];
