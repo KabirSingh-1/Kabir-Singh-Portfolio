@@ -45,18 +45,18 @@ export const experiences = [
       'Participated in hackathons and coding competitions to enhance problem-solving skills.',
     ],
   },
-  {
-    title: 'Frontend Developer Intern',
-    company_name: 'Tech Startup Inc.',
-    icon: 'https://picsum.photos/id/160/60/60', // Replace with actual logo
-    iconBg: '#E6DEDD',
-    date: 'June 2024 - Aug 2024',
-    points: [
-      'Developed and maintained web applications using React.js and Next.js.',
-      'Worked closely with designers and PMs to deliver high-quality products.',
-      'Ensured responsive design and cross-browser compatibility.',
-    ],
-  },
+  // {
+  //   title: 'Frontend Developer Intern',
+  //   company_name: 'Tech Startup Inc.',
+  //   icon: 'https://picsum.photos/id/160/60/60', // Replace with actual logo
+  //   iconBg: '#E6DEDD',
+  //   date: 'June 2024 - Aug 2024',
+  //   points: [
+  //     'Developed and maintained web applications using React.js and Next.js.',
+  //     'Worked closely with designers and PMs to deliver high-quality products.',
+  //     'Ensured responsive design and cross-browser compatibility.',
+  //   ],
+  // },
 ];
 
 // ============================
@@ -64,18 +64,18 @@ export const experiences = [
 // ============================
 export const projects = [
   {
-    name: 'Mehndi',
+    name: 'MehndiMuse',
     description:
-      'A platform offering AI-driven recommendations and personalized shopping experience.',
+      'MehndiMuse is a professional, fully responsive web application for a henna/mehndi artist. It features a beautiful portfolio, artist profiles, service details, and an appointment booking system',
     category: 'Web App',
     tags: [
-      { name: 'React', color: 'text-blue-500' },
-      { name: 'Firebase', color: 'text-yellow-500' },
-      { name: 'Tailwind CSS', color: 'text-cyan-500' },
+      { name: 'JavaScript', color: 'text-blue-500' },
+      { name: 'Node.js', color: 'text-yellow-500' },
+      { name: 'HTML/CSS', color: 'text-cyan-500' },
     ],
-    image: 'https://picsum.photos/seed/project1/500/300',
-    source_code_link: 'https://github.com/',
-    live_demo_link: 'https://your-live-demo.com',
+    image: './assets/MehndiMuse.png',
+    source_code_link: 'https://github.com/KabirSingh-1/MehndiMuse',
+    live_demo_link: 'https://mehndimuse.netlify.app/',
   },
   {
     name: '3D Portfolio Website',
@@ -87,7 +87,7 @@ export const projects = [
       { name: 'Three.js', color: 'text-green-500' },
       { name: 'Framer Motion', color: 'text-pink-500' },
     ],
-    image: 'https://picsum.photos/seed/project2/500/300',
+    image: './assets/Portfolio.png',
     source_code_link: 'https://github.com/',
     live_demo_link: 'https://your-live-demo.com',
   },
