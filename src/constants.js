@@ -9,7 +9,6 @@ export const navLinks = [
   { id: 'experience', title: 'Experience' },
   { id: 'contact', title: 'Contact' },
 ];
-
 // ============================
 // ✅ SKILLS
 // ============================
@@ -65,7 +64,7 @@ export const experiences = [
 // ============================
 export const projects = [
   {
-    name: 'AI-Powered E-commerce Platform',
+    name: 'Mehndi',
     description:
       'A platform offering AI-driven recommendations and personalized shopping experience.',
     category: 'Web App',
