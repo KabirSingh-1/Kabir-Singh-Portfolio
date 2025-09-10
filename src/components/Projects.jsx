@@ -1,65 +1,13 @@
-// import React from 'react';
-// import { motion } from 'framer-motion';
-// import { SectionWrapper } from './hoc/sectionWrapper';
-// import { projects } from '../constants';
-// import ProjectCard from './ProjectCards';
-
-// const fadeIn = (direction = 'up', type = 'tween', delay = 0, duration = 1) => ({
-//   hidden: {
-//     x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
-//     y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
-//     opacity: 0,
-//   },
-//   show: {
-//     x: 0,
-//     y: 0,
-//     opacity: 1,
-//     transition: {
-//       type,
-//       delay,
-//       duration,
-//       ease: 'easeOut',
-//     },
-//   },
-// });
-
-// const Projects = () => {
-//   return (
-//     <>
-//       <motion.div variants={fadeIn("up", "tween", 0.2, 1)}>
-//         <p className="sm:text-lg text-base text-neutral-400 uppercase tracking-wider font-poppins">
-//           My Work
-//         </p>
-//         <h2 className="text-white font-black md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-space-grotesk">
-//           Projects.
-//         </h2>
-//       </motion.div>
-
-//       <div className="w-full flex">
-//         <motion.p
-//           variants={fadeIn("", "tween", 0.1, 1)}
-//           className="mt-3 text-neutral-300 text-base sm:text-lg max-w-3xl leading-relaxed font-poppins"
-//         >
-//           Following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.
-//         </motion.p>
-//       </div>
-
-//       <div className="mt-20 flex flex-wrap gap-7 justify-center">
-//         {projects.map((project, index) => (
-//           <ProjectCard key={`project-${index}`} index={index} {...project} />
-//         ))}
-//       </div>
-//     </>
-//   );
-// };
-
-// export default SectionWrapper(Projects, 'projects');
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import Slider from 'react-slick'; // Import Slider
 import { SectionWrapper } from './hoc/SectionWrapper';
 import { projects } from '../constants';
 import ProjectCard from './ProjectCards';
+
+// Import slick carousel styles
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // Animation Variants
 const textVariant = {
@@ -71,14 +19,36 @@ const textVariant = {
   },
 };
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.2 },
-  },
-};
-
 const Projects = () => {
+  // react-slick settings for Project Cards
+  const sliderSettings = {
+    dots: true,
+    infinite: false, // Set to true if you want it to loop
+    speed: 500,
+    slidesToShow: 3, // Default to show 3 cards
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024, // Laptop/large tablet
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: false,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 640, // Tablet/mobile
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+          dots: true,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       {/* Section Heading */}
@@ -108,21 +78,22 @@ const Projects = () => {
         These projects showcase my skills and experience through real-world examples. Each one includes a live demo and source code, reflecting my ability to create efficient, scalable, and visually appealing solutions.
       </motion.p>
 
-      {/* Project Cards Grid */}
+      {/* Project Cards Slider */}
       <motion.div
-        variants={containerVariants}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true }}
-        className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3 justify-center"
+        viewport={{ once: true, amount: 0.1 }}
+        className="mt-16 max-w-7xl mx-auto" // Added max-width and auto margins for centering
       >
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+        <Slider {...sliderSettings}>
+          {projects.map((project, index) => (
+            // Each card is now a child of the Slider
+            <ProjectCard key={`project-${index}`} {...project} />
+          ))}
+        </Slider>
       </motion.div>
     </>
   );
 };
 
 export default SectionWrapper(Projects, 'projects');
-
