@@ -106,3 +106,36 @@ export const projects = [
     live_demo_link: 'https://main--libertylaw.netlify.app/',
   },
 ];
+// ============================
+// ✅ CERTIFICATIONS (New Section)
+// ============================
+export const certifications = [
+  {
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    date: 'Issued: Jan 2023 - Expires: Jan 2026',
+    image: '/assets/aws-cloud-practitioner.png', // You'll need to add this image in your assets folder
+    link: 'https://www.credly.com/badges/your-aws-badge-id/public_url', // Replace with your actual Credly link or certificate URL
+  },
+  {
+    name: 'JavaScript Algorithms and Data Structures',
+    issuer: 'freeCodeCamp',
+    date: 'Issued: March 2023',
+    image: '/assets/freecodecamp-js.png', // You'll need to add this image in your assets folder
+    link: 'https://www.freecodecamp.org/certification/your-username/javascript-algorithms-and-data-structures', // Replace with your actual freeCodeCamp link
+  },
+  {
+    name: 'React - The Complete Guide',
+    issuer: 'Udemy',
+    date: 'Issued: June 2023',
+    image: '/assets/udemy-react.png', // You'll need to add this image in your assets folder
+    link: 'https://www.udemy.com/certificate/your-udemy-certificate-id/', // Replace with your actual Udemy certificate URL
+  },
+  {
+    name: 'React - The Complete Guide',
+    issuer: 'Udemy',
+    date: 'Issued: June 2023',
+    image: '/assets/udemy-react.png', // You'll need to add this image in your assets folder
+    link: 'https://www.udemy.com/certificate/your-udemy-certificate-id/', // Replace with your actual Udemy certificate URL
+  },
+];
