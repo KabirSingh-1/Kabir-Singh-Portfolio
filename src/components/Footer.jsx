@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center">
         <h3 className="text-lg text-white font-semibold mb-4">Follow Me</h3>
         <SocialLinks />
-        <p className="text-neutral-400 text-sm mt-4">© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+        <p className="text-neutral-400 text-sm mt-4">© {new Date().getFullYear()} All rights reserved.</p>
       </div>
     </footer>
   );
