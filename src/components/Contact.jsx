@@ -57,7 +57,7 @@
 //   return (
 //     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
 //       <Toaster position="top-right" reverseOrder={false} />
-      
+
 //       {/* Contact Form */}
 //       <motion.div
 //         variants={slideIn('left', 'tween', 0.2, 1)}
@@ -171,14 +171,11 @@ const Contact = () => {
         <h3 className="text-white font-black md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-space-grotesk">
           Contact.
         </h3>
-
         <form
           action="https://formsubmit.co/singhkabir44778@gmail.com"
           method="POST"
-          onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
-          {/* To prevent spam */}
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://kabir-singh.netlify.app/thankyou" />
 
@@ -219,7 +216,7 @@ const Contact = () => {
             type="submit"
             className="bg-gradient-to-r from-violet-600 to-pink-500 hover:from-violet-700 hover:to-pink-600 transition-colors py-3 px-8 w-fit text-white font-bold rounded-xl shadow-md hover:shadow-violet-500/40"
           >
-            {loading ? 'Sending...' : 'Send Message'}
+            Send Message
           </button>
         </form>
       </motion.div>
