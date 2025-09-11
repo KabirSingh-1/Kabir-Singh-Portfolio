@@ -46,18 +46,7 @@ export const experiences = [
       'Participated in hackathons and coding competitions to enhance problem-solving skills.',
     ],
   },
-  // {
-  //   title: 'Frontend Developer Intern',
-  //   company_name: 'Tech Startup Inc.',
-  //   icon: 'https://picsum.photos/id/160/60/60', // Replace with actual logo
-  //   iconBg: '#E6DEDD',
-  //   date: 'June 2024 - Aug 2024',
-  //   points: [
-  //     'Developed and maintained web applications using React.js and Next.js.',
-  //     'Worked closely with designers and PMs to deliver high-quality products.',
-  //     'Ensured responsive design and cross-browser compatibility.',
-  //   ],
-  // },
+
 ];
 
 // ============================
@@ -112,31 +101,73 @@ export const projects = [
 // ============================
 export const certifications = [
   {
-    name: 'AWS Certified Cloud Practitioner',
-    issuer: 'Amazon Web Services',
-    date: 'Issued: Jan 2023 - Expires: Jan 2026',
-    image: '/assets/aws-cloud-practitioner.png', // You'll need to add this image in your assets folder
-    link: 'https://www.credly.com/badges/your-aws-badge-id/public_url', // Replace with your actual Credly link or certificate URL
+    name: 'Cloud Virtual Internship',
+    issuer: 'EduSkill',
+    date: 'During Sep-Nov 2023',
+    image: './assets/AWS-Cloud-Certificate.jpeg', 
+    link: '#',
   },
   {
-    name: 'JavaScript Algorithms and Data Structures',
-    issuer: 'freeCodeCamp',
-    date: 'Issued: March 2023',
-    image: '/assets/freecodecamp-js.png', // You'll need to add this image in your assets folder
-    link: 'https://www.freecodecamp.org/certification/your-username/javascript-algorithms-and-data-structures', // Replace with your actual freeCodeCamp link
+    name: 'AI-ML Virtual Internship ',
+    issuer: 'EduSkill',
+    date: 'During Apr-Jun 2024',
+    image: '/assets/AI-ML.jpg', 
+    link: 'https://www.freecodecamp.org/certification/your-username/javascript-algorithms-and-data-structures', 
   },
   {
-    name: 'React - The Complete Guide',
-    issuer: 'Udemy',
-    date: 'Issued: June 2023',
-    image: '/assets/udemy-react.png', // You'll need to add this image in your assets folder
-    link: 'https://www.udemy.com/certificate/your-udemy-certificate-id/', // Replace with your actual Udemy certificate URL
+    name: 'SAP Certified Associate - Back-End Developer - ABAP Cloud',
+    issuer: 'SAP recognizes',
+    date: 'Issued on: Sep 09, 2025',
+    image: '/assets/SAP-ABAP.jpg', 
+    link: 'https://www.credly.com/badges/45f5ebd7-68f9-4f78-a123-e67f8fb7e639', 
   },
   {
-    name: 'React - The Complete Guide',
-    issuer: 'Udemy',
-    date: 'Issued: June 2023',
-    image: '/assets/udemy-react.png', // You'll need to add this image in your assets folder
-    link: 'https://www.udemy.com/certificate/your-udemy-certificate-id/', // Replace with your actual Udemy certificate URL
+    name: 'Agentic AI Day - Hackathon-Finalist',
+    issuer: 'HACK2SKILL',
+    date: '26th-Jul-2025',
+    image: '/assets/Hack2skill-Certificate.png', 
+    link: 'https://certificate.hack2skill.com/user/aidayfinalist-1/2025H2S06AID-F01921', 
+  },
+  {
+    name: 'SIH-2024 Internal Hackathon',
+    issuer: 'GLBITM',
+    date: '6th sep-2024',
+    image: '/assets/SIH(2024).jpg', 
+    link: '#', 
+  },
+  {
+    name: 'HACK JNU 3.0 Certificate Of Participation',
+    issuer: 'JNU',
+    date: '27th-28th Jan-2024',
+    image: '/assets/HackJnu.png', 
+    link: 'https://certificate.givemycertificate.com/c/89c6c2ee-95fe-48d9-bbc4-e0feea3d5453',
+  },
+  {
+    name: 'Certificate Of Participation ',
+    issuer: 'GDSC-GLBITM',
+    date: '5th-6th Dec-2023',
+    image: '/assets/Dev-On.png', 
+    link: 'https://certificate.givemycertificate.com/c/ba754dbf-93a4-4688-98f7-d43bbfd00ed0', 
+  },
+  {
+    name: 'SQL (Basic) Certificate ',
+    issuer: 'HackerRank',
+    date: '21st July-2025',
+    image: '/assets/SQL-Hackerank.png', 
+    link: 'https://www.hackerrank.com/certificates/fdf80b117493', 
+  },
+  {
+    name: ' Python (Basic) Certificate',
+    issuer: 'HackerRank',
+    date: '22 Jun-2025',
+    image: '/assets/Python-Hackerank.png', 
+    link: 'https://www.hackerrank.com/certificates/b54efb42e69d', 
+  },
+  {
+    name: 'JavaScript (Basic) Certificate',
+    issuer: 'HackerRank',
+    date: '22 Jun-2025',
+    image: '/assets/Java-Script-Hackerank.png', 
+    link: 'https://www.hackerrank.com/certificates/aa63a75341a4', 
   },
 ];
