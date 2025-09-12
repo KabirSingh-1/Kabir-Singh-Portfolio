@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
-import Slider from 'react-slick'; // Import Slider
+import Slider from 'react-slick'; 
 import { SectionWrapper } from './hoc/SectionWrapper';
 import { certifications } from '../constants';
 
@@ -25,7 +25,7 @@ const fadeIn = (direction = 'up', type = 'spring', delay = 0, duration = 0.75) =
 
 const CertificationCard = ({ name, issuer, date, image, link }) => {
   return (
-    <div className="px-3 py-2"> {/* Added padding for spacing between carousel items */}
+    <div className="px-3 py-2">
       <Tilt
         glareEnable={true}
         glareMaxOpacity={0.4}
@@ -33,17 +33,16 @@ const CertificationCard = ({ name, issuer, date, image, link }) => {
         glarePosition="all"
         scale={1.03}
         transitionSpeed={400}
-        className="bg-neutral-800/70 backdrop-blur-lg border border-neutral-700 rounded-2xl shadow-lg hover:shadow-cyan-500/40 transition-all duration-300 h-full flex flex-col items-center p-6 transform hover:-translate-y-2"
-        style={{ minHeight: '420px' }} // Adjusted minHeight to ensure consistent card size in carousel
+        className="bg-neutral-800/70 backdrop-blur-lg border border-neutral-700 rounded-2xl shadow-lg hover:shadow-cyan-500/40 transition-all duration-300 h-full flex flex-col items-center p-6 transform hover:-translate-y-2 overflow-hidden"
       >
         {/* Certification Image */}
         <motion.img
           src={image}
           alt={name}
-          className="w-full h-40 object-contain mb-4 rounded-lg shadow-md"
+          className="w-full h-32 sm:h-40 object-contain mb-4 rounded-lg shadow-md"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }} // Removed delay here, as slider handles entry
+          transition={{ duration: 0.6 }}
         />
 
         {/* Certification Details */}
@@ -63,7 +62,7 @@ const CertificationCard = ({ name, issuer, date, image, link }) => {
             whileHover={{ scale: 1.05, boxShadow: '0 8px 16px rgba(0, 200, 200, 0.3)' }}
             whileTap={{ scale: 0.95 }}
           >
-            View Certificate{' '}
+            View Certificate
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
             </svg>
@@ -78,9 +77,9 @@ const Certifications = () => {
   // react-slick settings
   const sliderSettings = {
     dots: true,
-    infinite: false, // Set to false if you don't want it to loop
+    infinite: false,
     speed: 500,
-    slidesToShow: 3, // Default to show 3 cards
+    slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
@@ -88,7 +87,6 @@ const Certifications = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
           dots: true,
         },
       },
@@ -97,8 +95,9 @@ const Certifications = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          infinite: false,
           dots: true,
+          centerMode: true,
+          centerPadding: '20px',
         },
       },
     ],
@@ -120,17 +119,16 @@ const Certifications = () => {
         </h2>
       </motion.div>
 
-      {/* Use the Slider component */}
+      {/* Slider Section */}
       <motion.div
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.1 }} // Adjust amount for when animation triggers
-        variants={fadeIn('up', 'spring', 0.2, 0.75)} // Apply overall fade-in to the slider container
-        className="mt-12 max-w-7xl mx-auto" // Added max-width and auto margins for centering
+        viewport={{ once: true, amount: 0.1 }}
+        variants={fadeIn('up', 'spring', 0.2, 0.75)}
+        className="mt-12 max-w-7xl mx-auto px-2"
       >
         <Slider {...sliderSettings}>
           {certifications.map((certification, index) => (
-            // Each card is now a child of the Slider
             <CertificationCard key={`certification-${index}`} {...certification} />
           ))}
         </Slider>
