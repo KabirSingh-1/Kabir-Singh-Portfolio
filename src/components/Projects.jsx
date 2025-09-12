@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import { SectionWrapper } from './hoc/SectionWrapper';
@@ -8,6 +8,8 @@ import ProjectCard from './ProjectCards';
 // Import slick carousel styles
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+// Import custom CSS for the glow and custom dots
+import '../index.css'; // Make sure this path is correct for your custom CSS
 
 // Animation Variants
 const textVariant = {
@@ -20,21 +22,45 @@ const textVariant = {
 };
 
 const Projects = () => {
+  const [activeSlide, setActiveSlide] = useState(0); // State to track active slide
+
+  // Custom Paging Dots Component
+  const CustomPaging = (i) => (
+    <div
+      className={`h-2 w-2 rounded-full mx-1 transition-all duration-300 ${
+        i === activeSlide ? 'bg-violet-500 w-6' : 'bg-neutral-600'
+      }`}
+      style={{
+        display: 'inline-block', // Ensure dots are inline
+        margin: '0 4px', // Adjust spacing between dots
+      }}
+    ></div>
+  );
+
   // Enhanced react-slick settings for Project Cards
   const sliderSettings = {
     dots: true,
-    infinite: false,
-    speed: 500,
+    infinite: true, // Changed to true for continuous looping
+    speed: 700, // Slightly slower transition
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
+    centerMode: true, // Enable center mode for the highlighted card effect
+    centerPadding: '60px', // Adjust padding to reveal parts of next/prev cards
+    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex), // Update active slide before change
+    appendDots: (dots) => (
+      <div style={{ position: 'absolute', bottom: '-40px', width: '100%', textAlign: 'center' }}>
+        <ul style={{ margin: '0', padding: '0', display: 'inline-block' }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: CustomPaging, // Use custom paging dots
     responsive: [
       {
         breakpoint: 1280,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          dots: true,
+          centerPadding: '40px',
         },
       },
       {
@@ -42,27 +68,23 @@ const Projects = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true,
+          centerPadding: '80px', // More padding for 2 items
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 1, // Only one full card at a time
           slidesToScroll: 1,
-          dots: true,
-          centerMode: true,
-          centerPadding: '40px',
+          centerPadding: '80px', // Show more of the next/prev cards
         },
       },
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
-          centerMode: true,
-          centerPadding: '30px',
+          centerPadding: '40px', // Adjust as needed for smaller screens
         },
       },
       {
@@ -70,9 +92,7 @@ const Projects = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: true,
-          centerMode: true,
-          centerPadding: '20px',
+          centerPadding: '20px', // Minimal padding for very small screens
         },
       },
     ],
@@ -116,7 +136,11 @@ const Projects = () => {
       >
         <Slider {...sliderSettings}>
           {projects.map((project, index) => (
-            <ProjectCard key={`project-${index}`} {...project} />
+            <ProjectCard
+              key={`project-${index}`}
+              {...project}
+              isActive={index === activeSlide} // Pass isActive prop
+            />
           ))}
         </Slider>
       </motion.div>
