@@ -81,10 +81,10 @@ const Certifications = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false, // Hide arrows for cleaner look on all devices
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1280, // Large screens
+        breakpoint: 1280,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -92,7 +92,7 @@ const Certifications = () => {
         },
       },
       {
-        breakpoint: 1024, // Laptop
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -100,7 +100,7 @@ const Certifications = () => {
         },
       },
       {
-        breakpoint: 768, // Tablet
+        breakpoint: 768,
         settings: {
           slidesToShow: 1.5,
           slidesToScroll: 1,
@@ -110,7 +110,7 @@ const Certifications = () => {
         },
       },
       {
-        breakpoint: 640, // Mobile landscape
+        breakpoint: 640,
         settings: {
           slidesToShow: 1.2,
           slidesToScroll: 1,
@@ -120,7 +120,7 @@ const Certifications = () => {
         },
       },
       {
-        breakpoint: 480, // Mobile portrait
+        breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

@@ -20,57 +20,59 @@ const textVariant = {
 };
 
 const Projects = () => {
-  // react-slick settings for Project Cards
+  // Enhanced react-slick settings for Project Cards
   const sliderSettings = {
-    dots: true, // Show navigation dots
-    infinite: false, // Set to true if you want it to loop
+    dots: true,
+    infinite: false,
     speed: 500,
-    slidesToShow: 3, // Default for larger screens
+    slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false, // Typically hide arrows on mobile, dots are sufficient
+    arrows: false,
     responsive: [
       {
-        breakpoint: 1024, // Laptop/large tablet
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: false,
           dots: true,
-          arrows: false,
         },
       },
       {
-        breakpoint: 768, // Tablet
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1.5, // Show 1.5 cards to hint there's more content
+          slidesToShow: 1.5,
           slidesToScroll: 1,
-          infinite: false,
           dots: true,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 640, // Small tablet/large mobile
-        settings: {
-          slidesToShow: 1, // Full card view
-          slidesToScroll: 1,
-          infinite: false,
-          dots: true,
-          arrows: false,
-          centerMode: true, // Center the single card for better aesthetics
-          centerPadding: '20px', // Padding around the centered card
-        },
-      },
-      {
-        breakpoint: 480, // Mobile devices
-        settings: {
-          slidesToShow: 1, // Full card view
-          slidesToScroll: 1,
-          infinite: false,
-          dots: true,
-          arrows: false,
           centerMode: true,
-          centerPadding: '15px', // Slightly less padding for smaller screens
+          centerPadding: '40px',
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1.2,
+          slidesToScroll: 1,
+          dots: true,
+          centerMode: true,
+          centerPadding: '30px',
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          centerMode: true,
+          centerPadding: '20px',
         },
       },
     ],
@@ -84,12 +86,12 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="text-center px-4" // Added horizontal padding for mobile
+        className="text-center px-4"
       >
-        <p className="sm:text-lg text-base text-neutral-400 uppercase tracking-wider font-poppins">
+        <p className="sm:text-lg text-sm text-neutral-400 uppercase tracking-wider font-poppins">
           My Work
         </p>
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-pink-500 font-black md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-space-grotesk mt-2">
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-pink-500 font-black md:text-6xl sm:text-5xl text-4xl font-space-grotesk mt-2">
           Projects.
         </h2>
       </motion.div>
@@ -100,7 +102,7 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-6 text-neutral-300 text-base sm:text-lg max-w-3xl mx-auto text-center leading-relaxed font-poppins px-4" // Added horizontal padding for mobile
+        className="mt-4 sm:mt-6 text-neutral-300 text-sm sm:text-base max-w-3xl mx-auto text-center leading-relaxed font-poppins px-4"
       >
         These projects showcase my skills and experience through real-world examples. Each one includes a live demo and source code, reflecting my ability to create efficient, scalable, and visually appealing solutions.
       </motion.p>
@@ -110,8 +112,7 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.1 }}
-        // Adjusted padding for slider wrapper to ensure cards don't touch screen edges
-        className="mt-16 max-w-7xl mx-auto py-4"
+        className="mt-12 max-w-7xl mx-auto py-4 px-2 sm:px-4"
       >
         <Slider {...sliderSettings}>
           {projects.map((project, index) => (
