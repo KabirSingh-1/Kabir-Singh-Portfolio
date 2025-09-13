@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import { SectionWrapper } from './hoc/SectionWrapper';
@@ -8,8 +8,6 @@ import ProjectCard from './ProjectCards';
 // Import slick carousel styles
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-// Import custom CSS for the glow and custom dots
-import '../index.css'; // Make sure this path is correct for your custom CSS
 
 // Animation Variants
 const textVariant = {
@@ -22,77 +20,57 @@ const textVariant = {
 };
 
 const Projects = () => {
-  const [activeSlide, setActiveSlide] = useState(0); // State to track active slide
-
-  // Custom Paging Dots Component
-  const CustomPaging = (i) => (
-    <div
-      className={`h-2 w-2 rounded-full mx-1 transition-all duration-300 ${
-        i === activeSlide ? 'bg-violet-500 w-6' : 'bg-neutral-600'
-      }`}
-      style={{
-        display: 'inline-block', // Ensure dots are inline
-        margin: '0 4px', // Adjust spacing between dots
-      }}
-    ></div>
-  );
-
-  // Enhanced react-slick settings for Project Cards
+  // react-slick settings for Project Cards
   const sliderSettings = {
-    dots: true,
-    infinite: true, // Changed to true for continuous looping
-    speed: 700, // Slightly slower transition
-    slidesToShow: 3,
+    dots: true, // Show navigation dots
+    infinite: false, // Set to true if you want it to loop
+    speed: 500,
+    slidesToShow: 3, // Default for larger screens
     slidesToScroll: 1,
-    arrows: false,
-    centerMode: true, // Enable center mode for the highlighted card effect
-    centerPadding: '60px', // Adjust padding to reveal parts of next/prev cards
-    beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex), // Update active slide before change
-    appendDots: (dots) => (
-      <div style={{ position: 'absolute', bottom: '-40px', width: '100%', textAlign: 'center' }}>
-        <ul style={{ margin: '0', padding: '0', display: 'inline-block' }}> {dots} </ul>
-      </div>
-    ),
-    customPaging: CustomPaging, // Use custom paging dots
+    arrows: false, // Typically hide arrows on mobile, dots are sufficient
     responsive: [
       {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          centerPadding: '40px',
-        },
-      },
-      {
-        breakpoint: 1024,
+        breakpoint: 1024, // Laptop/large tablet
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          centerPadding: '80px', // More padding for 2 items
+          infinite: false,
+          dots: true,
+          arrows: false,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 768, // Tablet
         settings: {
-          slidesToShow: 1, // Only one full card at a time
+          slidesToShow: 1.5, // Show 1.5 cards to hint there's more content
           slidesToScroll: 1,
-          centerPadding: '80px', // Show more of the next/prev cards
+          infinite: false,
+          dots: true,
+          arrows: false,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 640, // Small tablet/large mobile
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Full card view
           slidesToScroll: 1,
-          centerPadding: '40px', // Adjust as needed for smaller screens
+          infinite: false,
+          dots: true,
+          arrows: false,
+          centerMode: true, // Center the single card for better aesthetics
+          centerPadding: '20px', // Padding around the centered card
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 480, // Mobile devices
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Full card view
           slidesToScroll: 1,
-          centerPadding: '20px', // Minimal padding for very small screens
+          infinite: false,
+          dots: true,
+          arrows: false,
+          centerMode: true,
+          centerPadding: '15px', // Slightly less padding for smaller screens
         },
       },
     ],
@@ -106,12 +84,12 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="text-center px-4"
+        className="text-center px-4" // Added horizontal padding for mobile
       >
-        <p className="sm:text-lg text-sm text-neutral-400 uppercase tracking-wider font-poppins">
+        <p className="sm:text-lg text-base text-neutral-400 uppercase tracking-wider font-poppins">
           My Work
         </p>
-        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-pink-500 font-black md:text-6xl sm:text-5xl text-4xl font-space-grotesk mt-2">
+        <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-pink-500 font-black md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-space-grotesk mt-2">
           Projects.
         </h2>
       </motion.div>
@@ -122,7 +100,7 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-4 sm:mt-6 text-neutral-300 text-sm sm:text-base max-w-3xl mx-auto text-center leading-relaxed font-poppins px-4"
+        className="mt-6 text-neutral-300 text-base sm:text-lg max-w-3xl mx-auto text-center leading-relaxed font-poppins px-4" // Added horizontal padding for mobile
       >
         These projects showcase my skills and experience through real-world examples. Each one includes a live demo and source code, reflecting my ability to create efficient, scalable, and visually appealing solutions.
       </motion.p>
@@ -132,15 +110,12 @@ const Projects = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.1 }}
-        className="mt-12 max-w-7xl mx-auto py-4 px-2 sm:px-4"
+        // Adjusted padding for slider wrapper to ensure cards don't touch screen edges
+        className="mt-16 max-w-7xl mx-auto py-4"
       >
         <Slider {...sliderSettings}>
           {projects.map((project, index) => (
-            <ProjectCard
-              key={`project-${index}`}
-              {...project}
-              isActive={index === activeSlide} // Pass isActive prop
-            />
+            <ProjectCard key={`project-${index}`} {...project} />
           ))}
         </Slider>
       </motion.div>
