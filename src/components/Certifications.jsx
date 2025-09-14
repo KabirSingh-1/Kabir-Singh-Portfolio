@@ -81,26 +81,35 @@ const CertificationCard = ({ name, issuer, date, image, link }) => (
 );
 
 const Certifications = () => {
-  const sliderSettings = {
+ const sliderSettings = {
   dots: true,
   infinite: false,
   speed: 500,
-  slidesToShow: 3, // default for desktop
+  slidesToShow: 3,
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 1024, // tablet
+      breakpoint: 1024, // tablets & small laptops
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
     {
-      breakpoint: 640, // mobile
+      breakpoint: 1080, // for devices like Poco X4 Pro
       settings: {
-        slidesToShow: 1, // show only 1 card
+        slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: false, // optional, can enable for center effect
+        centerMode: false,
+        centerPadding: '0px',
+      },
+    },
+    {
+      breakpoint: 640, // smaller phones
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: false,
         centerPadding: '0px',
       },
     },
