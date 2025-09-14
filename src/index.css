@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ============================= */
+
 /* Gradient Background Animation */
-/* ============================= */
+
 @keyframes gradient {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -14,9 +14,9 @@
   animation: gradient 3s ease infinite;
 }
 
-/* ============================= */
+
 /* Line Clamp Utilities */
-/* ============================= */
+
 .line-clamp-1,
 .line-clamp-2,
 .line-clamp-3 {
@@ -28,9 +28,9 @@
 .line-clamp-2 { -webkit-line-clamp: 2; }
 .line-clamp-3 { -webkit-line-clamp: 3; }
 
-/* ============================= */
+
 /* Uniform Card Height (Projects & Certifications) */
-/* ============================= */
+
 .uniform-card {
   @apply w-full max-w-sm p-4 rounded-2xl shadow-lg 
          bg-neutral-800/70 backdrop-blur-lg border border-neutral-700 
@@ -43,9 +43,9 @@
   .uniform-card { height: 20rem; }
 }
 
-/* ============================= */
+
 /* Extra Small Breakpoint (≤380px) */
-/* ============================= */
+
 @media (max-width: 380px) {
   .xs\:text-sm { font-size: 0.875rem; }
   .xs\:px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
@@ -58,9 +58,9 @@
   .xs\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-/* ============================= */
+
 /* Slick Slider Dots Fixes */
-/* ============================= */
+
 .slick-dots {
   position: absolute;
   bottom: -40px;
@@ -82,9 +82,9 @@
   .slick-dots { bottom: -30px; }
 }
 
-/* ============================= */
+
 /* Touch Targets */
-/* ============================= */
+
 @media (max-width: 768px) {
   .touch-target {
     min-height: 44px;
@@ -92,9 +92,9 @@
   }
 }
 
-/* ============================= */
+
 /* Responsive Skill Ball Sizes */
-/* ============================= */
+
 @media (max-width: 640px) {
   .skill-ball { width: 4rem; height: 4rem; }
 }
@@ -108,9 +108,9 @@
   .skill-ball { width: 7rem; height: 7rem; }
 }
 
-/* ============================= */
+
 /* Glow Effect */
-/* ============================= */
+
 .glow-card {
   position: relative;
   overflow: hidden;
@@ -132,3 +132,156 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+.uniform-card {
+  @apply w-full max-w-sm p-4 rounded-2xl shadow-lg 
+         bg-neutral-800/70 backdrop-blur-lg border border-neutral-700 
+         flex flex-col transition-all duration-300;
+  height: 26rem; /* 🔹 fixed uniform height */
+}
+
+@media (max-width: 640px) {
+  .uniform-card { height: 24rem; }
+}
+
+
+
+/* Animated Glow Border          */
+
+.glow-card {
+  position: relative;
+  border-radius: 1rem; /* match your rounded-2xl */
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: inherit;
+  background: linear-gradient(
+    270deg,
+    #06b6d4,
+    #9333ea,
+    #ec4899,
+    #06b6d4
+  );
+  background-size: 600% 600%;
+  animation: glowBorder 6s linear infinite;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 1;
+}
+
+.glow-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes glowBorder {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Infinite Marquee Animation    */
+
+@keyframes marquee-left {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-right {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0%); }
+}
+
+.marquee-row {
+  display: flex;
+  width: max-content;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-left {
+  animation-name: marquee-left;
+}
+
+.marquee-right {
+  animation-name: marquee-right;
+}
+
+/* ... other CSS ... */
+
+
+/* Glow Shield for Skill Balls   */
+
+.glow-shield {
+  position: relative;
+  border-radius: 50%; /* Make it perfectly circular */
+  overflow: hidden; /* Ensure glow stays within the circle */
+  background-color: #1a1a1a; /* A dark background for the ball itself */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle inner shadow for depth */
+}
+
+.glow-shield::before {
+  content: "";
+  position: absolute;
+  inset: -3px; /* Slightly larger inset for the glow */
+  border-radius: inherit; /* Inherit the circular border-radius */
+  background: linear-gradient(
+    270deg,
+    #06b6d4, /* cyan-400 */
+    #9333ea, /* purple-500 */
+    #ec4899, /* pink-500 */
+    #06b6d4
+  );
+  background-size: 400% 400%; /* Smaller background size for faster animation */
+  animation: glowBorder 4s linear infinite; /* Faster animation */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0; /* Ensure glow is behind the content */
+  filter: blur(8px); /* Adjust blur for the glow */
+  opacity: 0.7; /* Make the glow a bit more prominent */
+}
+
+.glow-shield > * {
+  position: relative;
+  z-index: 1; /* Ensure content is above the glow */
+}
+
+@keyframes glowBorder {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive Skill Ball Sizes */
+@media (max-width: 640px) {
+  .skill-ball { width: 4rem; height: 4rem; }
+}
+@media (min-width: 641px) and (max-width: 768px) {
+  .skill-ball { width: 5rem; height: 5rem; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .skill-ball { width: 6rem; height: 6rem; }
+}
+@media (min-width: 1025px) {
+  .skill-ball { width: 7rem; height: 7rem; }
+}
+
+/* Ensure the Three.js canvas fills its parent */
+.skill-ball canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ... rest of your CSS ... */
