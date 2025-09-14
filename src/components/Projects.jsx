@@ -15,19 +15,32 @@ const textVariant = {
 
 const Projects = () => {
   const sliderSettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-      { breakpoint: 768, settings: { slidesToShow: 1.5, slidesToScroll: 1 } },
-      { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: true, centerPadding: '20px' } },
-      { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: true, centerPadding: '15px' } },
-    ],
-  };
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3, // desktop default
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1280, // large screens
+      settings: { slidesToShow: 3, slidesToScroll: 1 },
+    },
+    {
+      breakpoint: 1024, // tablets
+      settings: { slidesToShow: 2, slidesToScroll: 1 },
+    },
+    {
+      breakpoint: 768, // smaller tablets / large phones
+      settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: false, centerPadding: '0px' },
+    },
+    {
+      breakpoint: 480, // small phones
+      settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: false, centerPadding: '0px' },
+    },
+  ],
+};
+
 
   return (
     <>

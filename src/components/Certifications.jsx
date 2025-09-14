@@ -85,33 +85,24 @@ const Certifications = () => {
   dots: true,
   infinite: false,
   speed: 500,
-  slidesToShow: 3,
+  slidesToShow: 3, // default desktop
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 1024, // tablets & small laptops
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      },
+      breakpoint: 1280, // large screens
+      settings: { slidesToShow: 3, slidesToScroll: 1 },
     },
     {
-      breakpoint: 1080, // for devices like Poco X4 Pro
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: false,
-        centerPadding: '0px',
-      },
+      breakpoint: 1024, // tablets
+      settings: { slidesToShow: 2, slidesToScroll: 1 },
     },
     {
-      breakpoint: 640, // smaller phones
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: false,
-        centerPadding: '0px',
-      },
+      breakpoint: 768, // medium phones
+      settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: false, centerPadding: '0px' },
+    },
+    {
+      breakpoint: 480, // small phones
+      settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: false, centerPadding: '0px' },
     },
   ],
 };

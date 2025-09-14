@@ -14,14 +14,14 @@ export const navLinks = [
 // ✅ SKILLS
 // ============================
 export const skills = [
-  { name: 'HTML 5', icon: '/assets/HTML.png', alt: 'HTML Logo', level: 'Advanced' },
-  { name: 'CSS 3', icon: '/assets/CSS.png', alt: 'CSS Logo', level: 'Advanced' },
+  { name: 'html 5', icon: '/assets/html.png', alt: 'html Logo', level: 'Advanced' },
+  { name: 'CSS 3', icon: '/assets/css.png', alt: 'CSS Logo', level: 'Advanced' },
   { name: 'Tailwind CSS', icon: '/assets/tailwind.png', alt: 'Tailwind CSS Logo', level: 'Intermediate' },
   { name: 'JavaScript', icon: '/assets/JS.png', alt: 'JavaScript Logo', level: 'Advanced' },
   { name: 'React JS', icon: '/assets/React.png', alt: 'React Logo', level: 'Advanced' },
   { name: 'Node JS', icon: '/assets/Node.png', alt: 'Node.js Logo', level: 'Intermediate' },
-  { name: 'Python', icon: '/assets/Python.png', alt: 'Python Logo', level: 'Intermediate' },
-  { name: 'Java', icon: '/assets/JAVA.png', alt: 'Java Logo', level: 'Intermediate' },
+  { name: 'Python', icon: '/assets/python.png', alt: 'Python Logo', level: 'Intermediate' },
+  { name: 'Java', icon: '/assets/java.png', alt: 'Java Logo', level: 'Intermediate' },
   { name: 'MongoDB', icon: '/assets/MongoDB.png', alt: 'MongoDB Logo', level: 'Intermediate' },
   { name: 'OOP with Java', icon: '/assets/OOPs.png', alt: 'OOP Java Logo', level: 'Intermediate' },
   { name: 'Git & GitHub', icon: '/assets/Git.png', alt: 'Git Logo', level: 'Intermediate' },
