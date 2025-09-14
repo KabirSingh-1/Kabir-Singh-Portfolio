@@ -157,7 +157,7 @@ const Projects = () => {
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
-          slidesPerView={3}
+          slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
           autoplay={{
