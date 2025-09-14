@@ -68,6 +68,20 @@ export const projects = [
     live_demo_link: 'https://mehndimuse.netlify.app/',
   },
   {
+    name: 'PragatiPath',
+    description:
+      'A citizen-centric platform to report & track civic issues with AI-powered classification and gamification',
+    category: 'Web App',
+    tags: [
+      { name: 'React.js', color: 'text-blue-500' },
+      { name: 'Gemini', color: 'text-yellow-500' },
+      { name: 'TailWindCSS', color: 'text-cyan-500' },
+    ],
+    image: './assets/pragatipath.png',
+    source_code_link: 'https://github.com/KabirSingh-1/PragatiPath-',
+    live_demo_link: 'https://pragati-path.netlify.app/',
+  },
+  {
     name: '3D Portfolio Website',
     description:
       'Interactive 3D portfolio built with Three.js and Framer Motion for a dynamic UX.',
@@ -78,7 +92,7 @@ export const projects = [
       { name: 'Framer Motion', color: 'text-pink-500' },
     ],
     image: './assets/Portfolio.png',
-    source_code_link: 'https://github.com/',
+    source_code_link: 'https://github.com/KabirSingh-1/Kabir-Singh-Portfolio',
     live_demo_link: 'https://kabir-singh.netlify.app/',
   },
   {
