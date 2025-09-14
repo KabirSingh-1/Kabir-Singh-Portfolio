@@ -55,12 +55,13 @@ const Navbar = () => {
 
           {/* ✅ Download Resume Button */}
           <motion.a
-            href="/Kabir_Singh_Resume.pdf" // replace with your resume file path
-            download="Kabir_Singh_Resume.pdf"
+            href="/Kabir_Singh_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:opacity-90 transition"
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:opacity-90 transition w-full sm:w-auto text-center"
           >
-            Download Resume
+            View Resume
           </motion.a>
         </motion.div>
 
