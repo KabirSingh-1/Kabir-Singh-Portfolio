@@ -40,26 +40,27 @@ const Navbar = () => {
           whileHover={{ scale: 1.02 }}
           className="flex items-center gap-4 cursor-pointer"
         >
+          {/* Logo / Name */}
           <motion.a
             href="#"
             onClick={() => {
               setActive('');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-2"
+            className="flex items-center"
           >
-            <p className="text-white text-lg font-bold font-space-grotesk">
+            <p className="text-white text-lg font-bold font-space-grotesk whitespace-nowrap">
               Kabir Singh
             </p>
           </motion.a>
 
-          {/* ✅ Download Resume Button */}
+          {/* ✅ View Resume Button */}
           <motion.a
             href="/Kabir_Singh_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:opacity-90 transition w-full sm:w-auto text-center"
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:opacity-90 transition whitespace-nowrap"
           >
             View Resume
           </motion.a>
@@ -107,46 +108,46 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-<AnimatePresence>
-  {menuOpen && (
-    <motion.div
-      initial={{ x: '100%' }}
-      animate={{ x: 0 }}
-      exit={{ x: '100%' }}
-      transition={{ type: 'spring', stiffness: 80 }}
-      className="fixed top-0 right-0 h-screen w-3/4 bg-neutral-900/95 backdrop-blur-lg flex flex-col items-center justify-center z-50"
-    >
-      {/* Close Button inside menu */}
-      <button
-        onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
-      >
-        <HiX />
-      </button>
-
-      <ul className="flex flex-col gap-8 text-white text-xl">
-        {navLinks.map((link) => (
-          <li key={link.id}>
-            <Link
-              to={link.id}
-              spy={true}
-              smooth={true}
-              duration={600}
-              offset={-80}
-              onClick={() => {
-                setActive(link.title);
-                setMenuOpen(false);
-              }}
-              className="hover:text-violet-400 cursor-pointer transition-colors duration-200"
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', stiffness: 80 }}
+            className="fixed top-0 right-0 h-screen w-3/4 bg-neutral-900/95 backdrop-blur-lg flex flex-col items-center justify-center z-50"
+          >
+            {/* Close Button inside menu */}
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
             >
-              {link.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  )}
-</AnimatePresence>
+              <HiX />
+            </button>
+
+            <ul className="flex flex-col gap-8 text-white text-xl">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <Link
+                    to={link.id}
+                    spy={true}
+                    smooth={true}
+                    duration={600}
+                    offset={-80}
+                    onClick={() => {
+                      setActive(link.title);
+                      setMenuOpen(false);
+                    }}
+                    className="hover:text-violet-400 cursor-pointer transition-colors duration-200"
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
