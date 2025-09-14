@@ -284,46 +284,29 @@
   height: 100% !important;
 }
 
-/* ... rest of your CSS ... */
 
-/* Row 1: left → right */
-@keyframes marquee-left {
+   /* 🌐 Continuous Marquee */
+
+
+
+/* Row 1: Left <-> Right */
+@keyframes row1-pingpong {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-.animate-marquee-left {
+.animate-row1 {
   display: flex;
   width: max-content;
-  animation: marquee-left 20s linear infinite;
+  animation: row1-pingpong 18s linear infinite alternate;
 }
 
-/* Row 2: right → left */
-@keyframes marquee-right {
+/* Row 2: Right <-> Left */
+@keyframes row2-pingpong {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
-.animate-marquee-right {
+.animate-row2 {
   display: flex;
   width: max-content;
-  animation: marquee-right 22s linear infinite;
-}
-
-/* Skill Ball Sizes (responsive) */
-@media (max-width: 640px) {
-  .skill-ball { width: 4rem; height: 4rem; }
-}
-@media (min-width: 641px) and (max-width: 768px) {
-  .skill-ball { width: 5rem; height: 5rem; }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  .skill-ball { width: 6rem; height: 6rem; }
-}
-@media (min-width: 1025px) {
-  .skill-ball { width: 7rem; height: 7rem; }
-}
-
-/* Ensure Three.js canvas fills parent */
-.skill-ball canvas {
-  width: 100% !important;
-  height: 100% !important;
+  animation: row2-pingpong 20s linear infinite alternate;
 }
