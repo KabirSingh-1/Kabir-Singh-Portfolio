@@ -59,14 +59,18 @@ const ExperienceCard = ({ experience }) => (
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className="sm:text-lg text-base text-neutral-400 uppercase tracking-wider font-poppins">
-          What I have done so far
-        </p>
-        <h2 className="text-white font-black md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-space-grotesk">
-          Work Experience.
-        </h2>
-      </motion.div>
+   <motion.div
+  variants={textVariant()}
+  className="text-center mb-8" // 👈 centers text + adds spacing below
+>
+  <p className="sm:text-lg text-base text-neutral-400 uppercase tracking-wider font-poppins">
+    What I have done so far
+  </p>
+  <h2 className="text-white font-black md:text-6xl sm:text-5xl xs:text-4xl text-3xl font-space-grotesk mt-2">
+    Work Experience.
+  </h2>
+</motion.div>
+
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline lineColor="#6d28d9">

@@ -14,8 +14,8 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
 
     // react-scroll active section
-    Events.scrollEvent.register('begin', () => {});
-    Events.scrollEvent.register('end', () => {});
+    Events.scrollEvent.register('begin', () => { });
+    Events.scrollEvent.register('end', () => { });
     scrollSpy.update();
 
     return () => {
@@ -34,22 +34,36 @@ const Navbar = () => {
       className={`fixed top-0 w-full z-50 transition-colors duration-300 ${navBgClasses}`}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
-        
+
         {/* Logo */}
-        <motion.a
-          href="#"
-          whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-2 cursor-pointer"
-          onClick={() => {
-            setActive('');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          className="flex items-center gap-4 cursor-pointer"
         >
-          <p className="text-white text-lg font-bold font-space-grotesk">
-            Kabir Singh
-            <span className="hidden sm:inline-block"> | Software Developer</span>
-          </p>
-        </motion.a>
+          <motion.a
+            href="#"
+            onClick={() => {
+              setActive('');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="flex items-center gap-2"
+          >
+            <p className="text-white text-lg font-bold font-space-grotesk">
+              Kabir Singh
+            </p>
+          </motion.a>
+
+          {/* ✅ Download Resume Button */}
+          <motion.a
+            href="/Kabir_Singh_Resume.pdf" // replace with your resume file path
+            download="Kabir_Singh_Resume.pdf"
+            whileHover={{ scale: 1.05 }}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-xl text-sm font-semibold shadow-lg hover:opacity-90 transition"
+          >
+            Download Resume
+          </motion.a>
+        </motion.div>
+
 
         {/* Desktop Menu */}
         <ul className="hidden sm:flex flex-row gap-8 relative">
@@ -62,9 +76,8 @@ const Navbar = () => {
                 duration={600}
                 offset={-80}
                 onSetActive={() => setActive(link.title)}
-                className={`cursor-pointer ${
-                  active === link.title ? 'text-white' : 'text-neutral-300'
-                } hover:text-white text-base font-medium transition-colors duration-200`}
+                className={`cursor-pointer ${active === link.title ? 'text-white' : 'text-neutral-300'
+                  } hover:text-white text-base font-medium transition-colors duration-200`}
               >
                 {link.title}
               </Link>
