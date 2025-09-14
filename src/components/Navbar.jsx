@@ -107,38 +107,46 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', stiffness: 80 }}
-            className="fixed top-0 right-0 h-screen w-3/4 bg-neutral-900/95 backdrop-blur-lg flex flex-col items-center justify-center z-50"
-          >
-            <ul className="flex flex-col gap-8 text-white text-xl">
-              {navLinks.map((link) => (
-                <li key={link.id}>
-                  <Link
-                    to={link.id}
-                    spy={true}
-                    smooth={true}
-                    duration={600}
-                    offset={-80}
-                    onClick={() => {
-                      setActive(link.title);
-                      setMenuOpen(false);
-                    }}
-                    className="hover:text-violet-400 cursor-pointer transition-colors duration-200"
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+<AnimatePresence>
+  {menuOpen && (
+    <motion.div
+      initial={{ x: '100%' }}
+      animate={{ x: 0 }}
+      exit={{ x: '100%' }}
+      transition={{ type: 'spring', stiffness: 80 }}
+      className="fixed top-0 right-0 h-screen w-3/4 bg-neutral-900/95 backdrop-blur-lg flex flex-col items-center justify-center z-50"
+    >
+      {/* Close Button inside menu */}
+      <button
+        onClick={() => setMenuOpen(false)}
+        className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
+      >
+        <HiX />
+      </button>
+
+      <ul className="flex flex-col gap-8 text-white text-xl">
+        {navLinks.map((link) => (
+          <li key={link.id}>
+            <Link
+              to={link.id}
+              spy={true}
+              smooth={true}
+              duration={600}
+              offset={-80}
+              onClick={() => {
+                setActive(link.title);
+                setMenuOpen(false);
+              }}
+              className="hover:text-violet-400 cursor-pointer transition-colors duration-200"
+            >
+              {link.title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  )}
+</AnimatePresence>
     </nav>
   );
 };
