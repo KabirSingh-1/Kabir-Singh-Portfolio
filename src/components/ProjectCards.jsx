@@ -3,22 +3,18 @@ import Tilt from 'react-parallax-tilt';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ name, description, tags, image, source_code_link, live_demo_link }) => (
-  <div className="px-2 py-4 sm:px-3 sm:py-2 flex-shrink-0 w-full">
+  <div className="px-2 py-4 sm:px-3 sm:py-2">
     <Tilt
       glareEnable
-      glareMaxOpacity={0.2}
+      glareMaxOpacity={0.3}
       scale={1.03}
       transitionSpeed={250}
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
       className="uniform-card glow-card hover:scale-[1.02] transition-transform"
-      tiltEnable={window.innerWidth > 768} // disable tilt on mobile
     >
-      {/* Image */}
-      <div className="relative w-full aspect-[4/3] rounded-t-2xl overflow-hidden">
+      {/* Image (fixed height) */}
+      <div className="relative w-full h-[180px] sm:h-[230px] rounded-t-2xl overflow-hidden flex-shrink-0">
         <img src={image} alt={name} className="w-full h-full object-cover rounded-t-2xl" loading="lazy" />
-        {/* Overlay buttons */}
-        <div className="absolute inset-0 flex justify-center items-center gap-3 sm:gap-4 bg-black/60 opacity-100 md:opacity-0 hover:opacity-100 transition duration-300">
+        <div className="absolute inset-0 flex justify-center items-center gap-3 sm:gap-4 bg-black/60 opacity-0 hover:opacity-100 transition duration-300">
           {live_demo_link && (
             <button
               onClick={() => window.open(live_demo_link, '_blank')}
@@ -38,7 +34,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, live_de
         </div>
       </div>
 
-      {/* Info */}
+      {/* Info (flex grows to fill space) */}
       <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 overflow-hidden">
         <div className="flex-1">
           <h3 className="text-white font-bold text-lg sm:text-2xl font-space-grotesk line-clamp-1">{name}</h3>
@@ -47,7 +43,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link, live_de
           </p>
         </div>
 
-        {/* Tags */}
+        {/* Tags (stick to bottom) */}
         <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <span

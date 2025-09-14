@@ -82,16 +82,31 @@ const CertificationCard = ({ name, issuer, date, image, link }) => (
 
 const Certifications = () => {
   const sliderSettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
-      { breakpoint: 640, settings: { slidesToShow: 1, slidesToScroll: 1, centerMode: true, centerPadding: '20px' } },
-    ],
-  };
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3, // default for desktop
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024, // tablet
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 640, // mobile
+      settings: {
+        slidesToShow: 1, // show only 1 card
+        slidesToScroll: 1,
+        centerMode: false, // optional, can enable for center effect
+        centerPadding: '0px',
+      },
+    },
+  ],
+};
+
 
   return (
     <>
