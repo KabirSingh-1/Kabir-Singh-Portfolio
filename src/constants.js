@@ -39,7 +39,7 @@ export const experiences = [
     company_name: 'GL Bajaj Institute of Technology & Management',
     icon: '/assets/GL.png',
     iconBg: '#383E56',
-    date: 'Aug 2021 - May 2025',
+    date: '2026-Batch',
     points: [
       'Studied core subjects like Data Structures, Algorithms, OS, and Database Management.',
       'Developed projects using React.js, Node.js, and MongoDB.',
