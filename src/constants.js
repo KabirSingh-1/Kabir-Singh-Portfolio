@@ -65,7 +65,7 @@ export const projects = [
     ],
     image: './assets/MehndiMuse.png',
     source_code_link: 'https://github.com/KabirSingh-1/MehndiMuse',
-    live_demo_link: 'https://mehndimuse.netlify.app/',
+    live_demo_link: 'https://mehndimuse.netlify.app/user',
   },
   {
     name: 'PragatiPath',
