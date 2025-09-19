@@ -46,6 +46,24 @@ export const experiences = [
       'Participated in hackathons and coding competitions to enhance problem-solving skills.',
     ],
   },
+  {
+    title: 'React Developer Intern',
+    company_name: 'Appversal',
+    icon: '/assets/appversal.png',
+    iconBg: '#383E56',
+    date: '18sep - 2025 to 17mar - 2026',
+    points: [
+  "Built and optimized responsive user interfaces using React.js, Tailwind CSS, and modern UI libraries.",
+  "Integrated APIs and managed state effectively with React hooks, Context API, and Redux where required.",
+  "Collaborated with backend team to connect REST APIs, ensuring seamless data flow and performance.",
+  "Implemented reusable components and improved code quality through modular design and best practices.",
+  "Worked with Git/GitHub for version control, feature branching, and code reviews.",
+  "Enhanced user experience by adding animations, form validations, and interactive UI elements with Framer Motion.",
+  "Contributed to live deployment workflows using tools like Netlify, Vercel, and Render.",
+  "Participated in team discussions, sprint planning, and provided solutions to improve project scalability.",
+]
+,
+  },
 
 ];
 
