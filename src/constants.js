@@ -6,6 +6,7 @@ export const navLinks = [
   { id: 'about', title: 'About' },
   { id: 'skills', title: 'Skills' },
   { id: 'projects', title: 'Projects' },
+  { id: 'freelance', title: 'Freelance' },
   { id: 'experience', title: 'Experience' },
   { id: 'certifications', title: 'Certifications' },
   { id: 'contact', title: 'Contact' },
@@ -63,6 +64,19 @@ export const experiences = [
   "Participated in team discussions, sprint planning, and provided solutions to improve project scalability.",
 ]
 ,
+  },
+  {
+    title: 'React Lead',
+    company_name: 'AppStorys',
+    icon: '/assets/appversal.png',
+    iconBg: '#383E56',
+    date: 'Mar 2026 - Present',
+    points: [
+      'Leading the React.js and Next.js development for core product features as React Lead.',
+      'Architecting scalable, reusable component systems and enforcing best practices across the frontend team.',
+      'Working on-site in Noida, Uttar Pradesh, collaborating closely with design and backend teams.',
+      'Driving technical decisions around state management, performance optimization, and code quality.',
+    ],
   },
 
 ];
@@ -128,6 +142,65 @@ export const projects = [
     live_demo_link: 'https://main--libertylaw.netlify.app/',
   },
 ];
+
+// ============================
+// ✅ FREELANCE PROJECTS
+// ============================
+export const freelanceProjects = [
+  {
+    name: 'Sikar Mehndi',
+    description:
+      'Luxury mehndi artistry business website specializing in Bridal, Arabic, Traditional, and Custom Mehndi designs, with online appointment booking.',
+    category: 'Client Website',
+    tags: [
+      { name: 'React.js', color: 'text-blue-500' },
+      { name: 'Next.js', color: 'text-white' },
+      { name: 'Tailwind CSS', color: 'text-cyan-500' },
+    ],
+    image: '/assets/SikarMehndi.png',
+    live_demo_link: 'https://sikarmehndi.in/',
+  },
+  {
+    name: 'BhaiLog',
+    description:
+      "Event and ticketing site for Desi Comedy Live's Bollywood comedy nights, with a rewards program, gallery, and ticket purchasing.",
+    category: 'Client Website',
+    tags: [
+      { name: 'React.js', color: 'text-blue-500' },
+      { name: 'Next.js', color: 'text-white' },
+      { name: 'Node.js', color: 'text-yellow-500' },
+    ],
+    image: '/assets/BhaiLog.png',
+    live_demo_link: 'https://bhailog.desicomedylive.com/',
+  },
+  {
+    name: 'Gurugram Mehndi',
+    description:
+      'Business website for a luxury mehndi artistry studio in Gurugram, featuring service listings, pricing, testimonials, and appointment booking.',
+    category: 'Client Website',
+    tags: [
+      { name: 'React.js', color: 'text-blue-500' },
+      { name: 'Next.js', color: 'text-white' },
+      { name: 'Tailwind CSS', color: 'text-cyan-500' },
+    ],
+    image: '/assets/GurugramMehndi.png',
+    live_demo_link: 'https://gurugrammehndi.in/',
+  },
+  {
+    name: 'Akshay Argade',
+    description:
+      'Premium real estate advisory website showcasing property listings, services, and consultation booking for a real estate business.',
+    category: 'Client Website',
+    tags: [
+      { name: 'React.js', color: 'text-blue-500' },
+      { name: 'Next.js', color: 'text-white' },
+      { name: 'Tailwind CSS', color: 'text-cyan-500' },
+    ],
+    image: '/assets/AkshayArgade.png',
+    live_demo_link: 'https://akshayargade.com/',
+  },
+];
+
 // ============================
 // ✅ CERTIFICATIONS (New Section)
 // ============================

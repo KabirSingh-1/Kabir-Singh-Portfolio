@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import About from './components/About.jsx';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Freelance from './components/Freelance';
 import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
@@ -27,6 +28,7 @@ const App = () => {
               <About />
               <Skills />
               <Projects />
+              <Freelance />
               <Experience />
               <Certifications />
               <div className="relative z-0">
