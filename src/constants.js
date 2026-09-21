@@ -161,19 +161,6 @@ export const freelanceProjects = [
     live_demo_link: 'https://sikarmehndi.in/',
   },
   {
-    name: 'BhaiLog',
-    description:
-      "Event and ticketing site for Desi Comedy Live's Bollywood comedy nights, with a rewards program, gallery, and ticket purchasing.",
-    category: 'Client Website',
-    tags: [
-      { name: 'React.js', color: 'text-blue-500' },
-      { name: 'Next.js', color: 'text-white' },
-      { name: 'Node.js', color: 'text-yellow-500' },
-    ],
-    image: '/assets/BhaiLog.png',
-    live_demo_link: 'https://bhailog.desicomedylive.com/',
-  },
-  {
     name: 'Gurugram Mehndi',
     description:
       'Business website for a luxury mehndi artistry studio in Gurugram, featuring service listings, pricing, testimonials, and appointment booking.',
@@ -185,19 +172,6 @@ export const freelanceProjects = [
     ],
     image: '/assets/GurugramMehndi.png',
     live_demo_link: 'https://gurugrammehndi.in/',
-  },
-  {
-    name: 'Akshay Argade',
-    description:
-      'Premium real estate advisory website showcasing property listings, services, and consultation booking for a real estate business.',
-    category: 'Client Website',
-    tags: [
-      { name: 'React.js', color: 'text-blue-500' },
-      { name: 'Next.js', color: 'text-white' },
-      { name: 'Tailwind CSS', color: 'text-cyan-500' },
-    ],
-    image: '/assets/AkshayArgade.png',
-    live_demo_link: 'https://akshayargade.com/',
   },
 ];
 
